@@ -1,4 +1,4 @@
-# Extreme Angular 17
+<!-- # Extreme Angular 17
 
 ![image](https://github.com/joematthews/extreme-angular/assets/14097616/bfc78560-98a8-4959-8327-4e94121bf4dd)
 
@@ -6,7 +6,7 @@ This is an opinionated Angular starter project that enforces best practices and 
 
 You can run and explore extreme-angular on StackBlitz: https://stackblitz.com/github/joematthews/extreme-angular?preset=node
 
-> [!NOTE]  
+> [!NOTE]
 > If you run into _any issues at all_ with installing, updating, or using extreme-angular, then please search through the [issues](https://github.com/joematthews/extreme-angular/issues). If you do not see a similar issue, then please create a new issue -- thank you! 🙏
 
 If you are looking for a full featured, robust, and enterprise-ready Typescript backend framework that pairs well Angular, then checkout the [NestJS web framework project](https://nestjs.com/). NestJS has features similar to Springboot, .NET and other enterprise web frameworks.
@@ -55,7 +55,7 @@ Use the shortcut `CTRL+SHIFT+H` in VSCode to search and replace `extreme-angular
 
 To start the development server run `npm start`.
 
-> [!NOTE]  
+> [!NOTE]
 > If you're using [VSCode](https://code.visualstudio.com/) and [Chrome](https://www.google.com/chrome/), then press `F5` on the keyboard to start the app in debug mode.
 
 ## Key Features
@@ -324,4 +324,4 @@ Catppuccin has 4 flavours: 🌻 Latte, 🪴 Frappé, 🌺 Macchiato, & 🌿 Moch
 
 VSCode has two extensions: [Catppuccin for VSCode](https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc) and [Catppuccin Icons for VSCode](https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc-icons).
 
-My favorite is 🪴 Frappé.
+My favorite is 🪴 Frappé. -->
