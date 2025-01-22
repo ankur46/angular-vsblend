@@ -11,7 +11,6 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'extreme-angular';
-
+  title = 'vsblend';
   colors = ['none', 'primary', 'accent', 'warn'];
 }
