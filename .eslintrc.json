@@ -36,7 +36,8 @@
           "error",
           { "template": 30, "styles": 15 }
         ],
-        "@angular-eslint/prefer-on-push-component-change-detection": "off"
+        "@angular-eslint/prefer-on-push-component-change-detection": "off",
+        "@typescript-eslint/no-extraneous-class": "off"
       }
     },
     {
