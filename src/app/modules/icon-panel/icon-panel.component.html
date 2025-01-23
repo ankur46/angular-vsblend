@@ -1,0 +1,22 @@
+<main class="flex flex-col max-w-12 w-12 justify-between bg-gray-50">
+  <section class="flex flex-col">
+    @for (item of svgIcons | slice: 0 : 5; track trackByItem) {
+      <div
+        class="flex items-center justify-center py-3 hover:bg-gray-300 cursor-pointer"
+        [ngClass]="{ 'border-l-2 border-black': iconSelectedName === item }"
+      >
+        <mat-icon [svgIcon]="item" />
+      </div>
+    }
+  </section>
+  <section class="flex flex-col">
+    @for (item of svgIcons | slice: 5 : 8; track trackByItem) {
+      <div
+        class="flex items-center justify-center py-3 cursor-pointer hover:bg-gray-300"
+        [ngClass]="{ 'border-l-2 border-black': iconSelectedName === item }"
+      >
+        <mat-icon [svgIcon]="item" />
+      </div>
+    }
+  </section>
+</main>
