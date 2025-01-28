@@ -1,0 +1,41 @@
+<main class="flex flex-col h-full">
+  <header class="flex items-center justify-between px-4 py-3">
+    <span class="opacity-80 text-xs">EXPLORER</span>
+    <mat-icon>more_horiz</mat-icon>
+  </header>
+  <section class="flex-grow">
+    @for (item of treeDataSource; track trackByItem) {
+      @if (item.children) {
+        <article class="flex items-center gap-1 px-2 mb-1">
+          <mat-icon>keyboard_arrow_down</mat-icon>
+          <span class="text-sm font-medium">{{ item.name }}</span>
+        </article>
+        @for (child of item.children; track trackByItem) {
+          <article class="flex items-center gap-1 px-10">
+            <img
+              alt="no-image"
+              class="h-5 icon-red"
+              [appNgSrc]="'assets/file-icons/language-html5.svg'"
+            />
+            <span>{{ child.name }}</span>
+          </article>
+        }
+      } @else {
+        <article class="flex items-center gap-2 px-2 mb-1">
+          <mat-icon>keyboard_arrow_down</mat-icon>
+          <span>{{ item.name }}</span>
+        </article>
+      }
+    }
+  </section>
+  <footer>
+    <article class="flex items-center gap-1 px-2 mb-1 border-b-2 border-t-2">
+      <mat-icon>chevron_right</mat-icon>
+      <span class="text-sm font-medium">OUTLINE</span>
+    </article>
+    <article class="flex items-center gap-1 px-2 mb-1">
+      <mat-icon>chevron_right</mat-icon>
+      <span class="text-sm font-medium">TIMELINE</span>
+    </article>
+  </footer>
+</main>

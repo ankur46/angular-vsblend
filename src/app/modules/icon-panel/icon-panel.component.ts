@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { TrackClass } from '../../shared/trackClass';
 import { IconPanelService } from './icon-panel.service';
 @Component({
   selector: 'app-icon-panel',
@@ -9,13 +10,10 @@ import { IconPanelService } from './icon-panel.service';
   templateUrl: './icon-panel.component.html',
   styleUrl: './icon-panel.component.scss',
   providers: [IconPanelService],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class IconPanelComponent {
+export class IconPanelComponent extends TrackClass {
   protected iconpanelService = inject(IconPanelService);
   protected svgIcons: string[] = this.iconpanelService.SvgIcons;
   protected iconSelectedName: string = this.svgIcons[0] ?? '';
-
-  trackByItem(_index: number, item: string): string {
-    return item; // Or any unique identifier for each item
-  }
 }
