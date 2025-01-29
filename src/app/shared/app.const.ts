@@ -17,7 +17,18 @@ export const LAYOUTICONS: string[] = [
   'sidebarleft',
   'sidebarright',
 ];
-export const OTHERICONS: string[] = [...SEARCHICONS, ...LAYOUTICONS];
+export const TERMINALICONS: string[] = [
+  'terminal',
+  'add',
+  'chevronup',
+  'ellipsis',
+  'close',
+];
+export const OTHERICONS: string[] = [
+  ...SEARCHICONS,
+  ...LAYOUTICONS,
+  ...TERMINALICONS,
+];
 
 export const FILETREE: FileTree[] = [
   {
@@ -29,4 +40,21 @@ export const FILETREE: FileTree[] = [
       },
     ],
   },
+];
+
+export const TERMINALTABS: string[] = [
+  'PROBLEMS',
+  'OUTPUT',
+  'DEBUG CONSOLE',
+  'TERMINAL',
+  'PORTS',
+];
+
+export const VSFOOTER: string[] = [
+  'Ln 21, Col 21',
+  'Spaces: 2',
+  'UTF-8',
+  'LF',
+  'TypeScript',
+  'Prettier',
 ];

@@ -5,8 +5,10 @@
     <div class="flex grow h-screen">
       <app-icon-panel />
       <app-file-name-panel class="max-w-[260px] w-[260px]" />
-      <app-main-view class="flex-grow" />
+      <div class="flex flex-col flex-grow">
+        <app-main-view class="flex-grow" />
+        <app-terminal class="" />
+      </div>
     </div>
-    <app-terminal class="" />
   </div>
 </div>

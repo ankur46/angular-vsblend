@@ -1,0 +1,33 @@
+<main class="flex border-t-2 min-h-52 flex-col">
+  <section class="flex flex-grow h-full">
+    <div class="flex flex-grow space-x-4 mx-4 py-2">
+      @for (item of terminalTabs; track trackByItem) {
+        <span
+          class="opacity-80 text-xs"
+          [ngClass]="{
+            'underline underline-offset-8  font-medium': selectedTab === item
+          }"
+        >
+          {{ item }}
+        </span>
+      }
+    </div>
+    <div class="flex justify-end flex-grow items-start py-2 mx-4 space-x-2">
+      <div class="flex items-center gap-1">
+        <mat-icon class="small-custom-icon" [svgIcon]="'terminal'" />
+        <span class="text-xs">node</span>
+      </div>
+      <mat-icon class="small-custom-icon" [svgIcon]="'add'" />
+      <mat-icon class="small-custom-icon" [svgIcon]="'ellipsis'" />
+      <mat-icon class="small-custom-icon" [svgIcon]="'chevronup'" />
+      <mat-icon class="small-custom-icon" [svgIcon]="'close'" />
+    </div>
+  </section>
+  <section
+    class="bg-gray-200 min-h-6 flex justify-end items-center space-x-3 px-4"
+  >
+    @for (item of vsFooter; track trackByItem) {
+      <span class="opacity-70 text-xs">{{ item }}</span>
+    }
+  </section>
+</main>
