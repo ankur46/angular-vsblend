@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
+import { NgSrcDirective } from '../../shared/directives/ngsrc.directive';
 @Component({
   selector: 'app-main-view',
   standalone: true,
-  imports: [],
+  imports: [MatTabsModule, MatIconModule, NgSrcDirective, CommonModule],
   templateUrl: './main-view.component.html',
   styleUrl: './main-view.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MainViewComponent {}

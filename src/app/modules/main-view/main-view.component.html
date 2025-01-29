@@ -1,0 +1,56 @@
+<mat-tab-group
+  class="flex flex-grow h-full"
+  MatTabBodyPositionState="center"
+  animationDuration="0ms"
+>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <ng-container
+        *ngTemplateOutlet="
+          headerTitle;
+          context: {
+            image: 'assets/file-icons/language-html5.svg',
+            label: 'Welcome.html'
+          }
+        "
+      />
+    </ng-template>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <ng-container
+        *ngTemplateOutlet="
+          headerTitle;
+          context: {
+            image: 'assets/file-icons/language-html5.svg',
+            label: 'Welcome.html'
+          }
+        "
+      />
+    </ng-template>
+    Content 2
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <ng-container
+        *ngTemplateOutlet="
+          headerTitle;
+          context: {
+            image: 'assets/file-icons/language-html5.svg',
+            label: 'Welcome.html'
+          }
+        "
+      />
+    </ng-template>
+    Content 3
+  </mat-tab>
+</mat-tab-group>
+
+<!-- To render tab header title we have added this template to reuse in different tabs. -->
+<ng-template #headerTitle let-image="image" let-label="label">
+  <div class="!group flex flex-row items-center justify-center">
+    <img alt="no-image" class="h-5 icon-red mr-2" [appNgSrc]="image" />
+    <span>{{ label }}</span>
+    <mat-icon class="!group-hover:block ml-1 text-lg mb-1">close</mat-icon>
+  </div>
+</ng-template>
