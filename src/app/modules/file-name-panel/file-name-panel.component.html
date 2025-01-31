@@ -10,16 +10,14 @@
           <mat-icon>keyboard_arrow_down</mat-icon>
           <span class="text-sm font-medium">{{ item.name }}</span>
         </article>
-        @for (child of item.children; track trackByItem) {
-          <article class="flex items-center gap-1 px-10">
-            <img
-              alt="no-image"
-              class="h-5 icon-red"
-              [appNgSrc]="'assets/file-icons/language-html5.svg'"
-            />
-            <span>{{ child.name }}</span>
-          </article>
-        }
+        <div class="flex flex-col gap-1 mt-2">
+          @for (child of item.children; track trackByItem) {
+            <article class="flex items-center gap-2 px-10">
+              <img alt="no-image" class="h-5" [appNgSrc]="child.iconUrl" />
+              <span class="text-2xs">{{ child.name }}</span>
+            </article>
+          }
+        </div>
       } @else {
         <article class="flex items-center gap-2 px-2 mb-1">
           <mat-icon>keyboard_arrow_down</mat-icon>

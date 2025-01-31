@@ -205,8 +205,12 @@ export const FILETREE: FileTree[] = [
     name: 'ANKUR DESHWAL',
     children: [
       {
-        name: 'welcome.html',
-        iconName: 'html',
+        name: 'introduction.html',
+        iconUrl: 'assets/file-icons/htmlFile.svg',
+      },
+      {
+        name: 'techstack.component.ts',
+        iconUrl: 'assets/file-icons/typescriptFile.svg',
       },
     ],
   },

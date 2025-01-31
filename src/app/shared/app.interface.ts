@@ -1,7 +1,7 @@
 export type FileTree = {
   name: string;
   children?: FileTree[];
-  iconName?: string;
+  iconUrl?: string;
 };
 
 export type PersonalInfo = {

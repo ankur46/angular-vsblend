@@ -9,7 +9,7 @@
         *ngTemplateOutlet="
           headerTitle;
           context: {
-            image: 'assets/file-icons/language-html5.svg',
+            image: 'assets/file-icons/htmlFile.svg',
             label: 'Welcome.html'
           }
         "
@@ -25,7 +25,7 @@
 <!-- To render tab header title we have added this template to reuse in different tabs. -->
 <ng-template #headerTitle let-image="image" let-label="label">
   <div class="!group flex flex-row items-center justify-center">
-    <img alt="no-image" class="h-5 icon-red mr-2" [appNgSrc]="image" />
+    <img alt="no-image" class="h-5 mr-2" [appNgSrc]="image" />
     <span>{{ label }}</span>
     <mat-icon class="!group-hover:block ml-1 text-lg mb-1">close</mat-icon>
   </div>
