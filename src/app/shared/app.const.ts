@@ -1,4 +1,8 @@
-import { FileTree } from './app.interface';
+import { FileTree, PersonalInfo } from './app.interface';
+
+//STRINGS------
+
+//ARRAYS------
 
 export const SVGICONS: string[] = [
   'parentfiles',
@@ -9,7 +13,6 @@ export const SVGICONS: string[] = [
   'account',
   'settings',
 ];
-
 export const SEARCHICONS: string[] = ['arrowleft', 'arrowright'];
 export const LAYOUTICONS: string[] = [
   'layout',
@@ -30,18 +33,6 @@ export const OTHERICONS: string[] = [
   ...TERMINALICONS,
 ];
 
-export const FILETREE: FileTree[] = [
-  {
-    name: 'ANKUR DESHWAL',
-    children: [
-      {
-        name: 'welcome.html',
-        iconName: 'html',
-      },
-    ],
-  },
-];
-
 export const TERMINALTABS: string[] = [
   'PROBLEMS',
   'OUTPUT',
@@ -58,3 +49,23 @@ export const VSFOOTER: string[] = [
   'TypeScript',
   'Prettier',
 ];
+
+//OBJECTS------
+
+export const FILETREE: FileTree[] = [
+  {
+    name: 'ANKUR DESHWAL',
+    children: [
+      {
+        name: 'welcome.html',
+        iconName: 'html',
+      },
+    ],
+  },
+];
+
+export const PERSONALINFO: PersonalInfo = {
+  name: 'Ankur Deshwal',
+  designation: 'Senior Engineering Lead',
+  displayPictureUrl: 'assets/other-images/displayPicture.png',
+};

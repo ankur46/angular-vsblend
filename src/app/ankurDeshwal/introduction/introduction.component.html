@@ -1,0 +1,46 @@
+<main class="grid grid-cols-2 gap-10 p-12">
+  <!-- profile section  -->
+  <section class="col-span-2 flex items-center gap-10">
+    <div class="size-40 rounded-full">
+      <img
+        alt="no-image"
+        class="rounded-full"
+        [appNgSrc]="personalInfo.displayPictureUrl"
+      />
+    </div>
+    <div class="flex flex-col gap-1">
+      <h1 class="text-4xl font-bold">{{ personalInfo.name }}</h1>
+      <p class="text-xl">Resume with VSBlend</p>
+    </div>
+  </section>
+
+  <!-- Recent file section  -->
+  <section class="flex flex-col gap-2 px-4">
+    <h1 class="text-2xl font-medium">Recent</h1>
+    @for (item of [1, 1, 1, 1, 1]; let index = $index; track trackByItem) {
+      <span class="text-sm text-sky-700">File Name : {{ index + 1 }}</span>
+    }
+  </section>
+
+  <!-- Project overview section  -->
+  <section class="flex flex-col gap-2 px-4">
+    <h1 class="text-2xl font-medium">Walkthroughs</h1>
+    <div class="flex flex-col gap-2">
+      @for (item of [1, 1]; let index = $index; track trackByItem) {
+        <div class="flex gap-2">
+          <div
+            class="bg-gray-100 w-2/3 px-3 py-2 rounded-t-lg border-b-2 border-sky-500"
+          >
+            <div class="flex flex-col gap-1">
+              <span class="text-sm text-sky-700">
+                Project Name : {{ index + 1 }}
+              </span>
+              <span class="text-xs text-gray-500">Project Description</span>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+  <section class="h-10 col-span-2"></section>
+</main>

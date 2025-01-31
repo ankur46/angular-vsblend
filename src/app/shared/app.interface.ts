@@ -3,3 +3,9 @@ export type FileTree = {
   children?: FileTree[];
   iconName?: string;
 };
+
+export type PersonalInfo = {
+  name: string;
+  designation: string;
+  displayPictureUrl: string;
+};

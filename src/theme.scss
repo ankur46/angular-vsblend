@@ -63,3 +63,11 @@ $light-theme: mat.define-light-theme(
     background: #fafafa !important;
   }
 }
+
+.mat-mdc-tab-group {
+  .mat-mdc-tab-body-wrapper {
+    box-sizing: border-box;
+    height: 100%;
+    overflow: auto;
+  }
+}
