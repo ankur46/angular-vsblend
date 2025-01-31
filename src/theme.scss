@@ -46,6 +46,7 @@ $light-theme: mat.define-light-theme(
     border-left: 1px solid #fafafa !important;
     background: #e5e7eb !important;
     width: 13rem !important;
+    height: 35px !important;
 
     /* stylelint-disable-next-line selector-class-pattern */
     &.mdc-tab--active {
