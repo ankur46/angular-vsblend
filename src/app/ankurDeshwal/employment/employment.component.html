@@ -1,0 +1,44 @@
+<main class="flex flex-col p-12 gap-12">
+  <h1 class="text-2xl font-thin">Employment History</h1>
+  <section class="flex flex-col gap-4">
+    @for (item of employmentInfo; track trackByItem) {
+      <div
+        class="flex gap-10 border-b-2 border-sky-500 p-4 bg-gray-100 rounded-t-lg"
+      >
+        <div class="w-[15em] bg-white">
+          <img class="bg-white" [appNgSrc]="item.logoUrl" [alt]="item.name" />
+        </div>
+        <div class="flex flex-col gap-1">
+          <h2 class="text-lg font-medium text-sky-500">{{ item.name }}</h2>
+          <p class="text-sm opacity-60">{{ item.description }}</p>
+          <div class="flex gap-5 mt-4">
+            <ng-container
+              *ngTemplateOutlet="chips; context: { content: item.role }"
+            />
+            <ng-container
+              *ngTemplateOutlet="
+                chips;
+                context: {
+                  content: item.startYear + ' to ' + item.endYear,
+                  current: item.endYear === 0 ? true : false
+                }
+              "
+            />
+            <ng-container
+              *ngTemplateOutlet="
+                chips;
+                context: { content: item.projectCompleted + ' projects' }
+              "
+            />
+          </div>
+        </div>
+      </div>
+    }
+  </section>
+</main>
+
+<ng-template #chips let-content="content" let-current="current">
+  <span class="text-sm text-sky-600 bg-white px-3 py-1">
+    {{ !current ? content : "Currently Working" }}
+  </span>
+</ng-template>

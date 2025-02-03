@@ -1,4 +1,9 @@
-import { FileTree, PersonalInfo, TechStack } from './app.interface';
+import {
+  EmploymentInfo,
+  FileTree,
+  PersonalInfo,
+  TechStack,
+} from './app.interface';
 
 //STRINGS------
 
@@ -198,6 +203,39 @@ export const TECHSTACKINFO: TechStack[] = [
   },
 ];
 
+export const EMPLOYMENTINFO: EmploymentInfo[] = [
+  {
+    name: 'BNY Mellon',
+    companyUrl: `https://www.bny.com/corporate/global/en/about-us/about-bny.html`,
+    logoUrl: 'assets/other-images/bnyMellon.png',
+    description: 'Global financial services company',
+    startYear: 2017,
+    endYear: 2019,
+    projectCompleted: 5,
+    role: 'Software Engineer',
+  },
+  {
+    name: 'Coditas',
+    companyUrl: `https://coditas.com/about-us`,
+    logoUrl: 'assets/other-images/coditas.jpg',
+    description: 'UX & quality-focused digital engineering company',
+    startYear: 2019,
+    endYear: 2020,
+    projectCompleted: 4,
+    role: 'UI Developer',
+  },
+  {
+    name: 'Persistent Systems',
+    companyUrl: `https://www.persistent.com/company-overview/`,
+    logoUrl: 'assets/other-images/persistent.png',
+    description: 'Digital Engineering and Enterprise Modernization partner',
+    startYear: 2020,
+    endYear: 0,
+    projectCompleted: 5,
+    role: 'Senior Engineering Lead',
+  },
+];
+
 //OBJECTS------
 
 export const FILETREE: FileTree[] = [
@@ -210,6 +248,10 @@ export const FILETREE: FileTree[] = [
       },
       {
         name: 'techstack.component.ts',
+        iconUrl: 'assets/file-icons/typescriptFile.svg',
+      },
+      {
+        name: 'employment.component.ts',
         iconUrl: 'assets/file-icons/typescriptFile.svg',
       },
     ],
