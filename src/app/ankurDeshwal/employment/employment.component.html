@@ -20,7 +20,7 @@
                 chips;
                 context: {
                   content: item.startYear + ' to ' + item.endYear,
-                  current: item.endYear === 0 ? true : false
+                  currentCompany: item.endYear === 0 ? true : false
                 }
               "
             />
@@ -37,8 +37,8 @@
   </section>
 </main>
 
-<ng-template #chips let-content="content" let-current="current">
+<ng-template #chips let-content="content" let-currentCompany="currentCompany">
   <span class="text-sm text-sky-600 bg-white px-3 py-1">
-    {{ !current ? content : "Currently Working" }}
+    {{ !currentCompany ? content : "Currently Working" }}
   </span>
 </ng-template>
