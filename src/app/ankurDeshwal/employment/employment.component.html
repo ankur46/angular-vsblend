@@ -1,5 +1,11 @@
 <main class="flex flex-col p-12 gap-12">
-  <h1 class="text-2xl font-thin">Employment History</h1>
+  <div class="flex flex-col gap-1">
+    <span>{{ "@AngularVsBlend" }}</span>
+    <h1 class="text-2xl font-thin">
+      <span class="font-medium">Employment History</span>
+      extends customCard
+    </h1>
+  </div>
   <section class="flex flex-col gap-4">
     @for (item of employmentInfo; track trackByItem) {
       <div

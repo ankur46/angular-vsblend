@@ -1,4 +1,5 @@
 import {
+  Accomplishment,
   ContactLinks,
   EmploymentInfo,
   FileTree,
@@ -257,11 +258,13 @@ export const FILETREE: FileTree[] = [
         name: 'contact.json',
         iconUrl: 'assets/file-icons/jsonFile.svg',
       },
+      {
+        name: 'accomplishment.component.ts',
+        iconUrl: 'assets/file-icons/typescriptFile.svg',
+      },
     ],
   },
 ];
-
-//OBJECTS------
 
 export const CONTACTSANDLINKS: ContactLinks[] = [
   { name: 'Github', url: 'https://github.com/ankur46' },
@@ -274,6 +277,59 @@ export const CONTACTSANDLINKS: ContactLinks[] = [
     url: 'https://www.upwork.com/freelancers/~01b3adaa988b028ff3',
   },
 ];
+
+export const ACCOMPLISHMENT: Accomplishment[] = [
+  {
+    name: 'Angular Sr.Developer Certification',
+    description:
+      'This certification tested my knowledge of Angular along with Jasmine , HTML, CSS , Typescript and javascript',
+    imageUrl: 'assets/certificates/angularLeadCertification.png',
+  },
+  {
+    name: 'Top Talent 2023',
+    description:
+      'This award was given to me for my exceptional performance in the year 2023 and my contribution to the team',
+    imageUrl: 'assets/certificates/topTalentCertification.png',
+  },
+  {
+    name: 'Bravo Award for Media Automation Project',
+    description:
+      'This award was given for Excellent work done on Media automation project. This setup will help to minimize manual list pull requests for various uses',
+    imageUrl: 'assets/certificates/mediaAutomationCertification.png',
+  },
+  {
+    name: 'Bravo Award for QA Tool Project',
+    description:
+      'For your remarkable work in developing and launching the new felture "QA tool" and valuable contribution in hiring and training new team members',
+    imageUrl: 'assets/certificates/qaToolCertification.jpg',
+  },
+  {
+    name: 'Bravo Award for Mpush Project',
+    description:
+      'For valuable contribution in the successful launch of Mobile-Push project - timely, with good quality and well received by the client',
+    imageUrl: 'assets/certificates/mpushCertification.jpg',
+  },
+  {
+    name: 'Bravo Award for PNR Project',
+    description:
+      'For Contribution in Development of Pick and Roll UI - Notifications module. and also integrated Zeta API for PNR project',
+    imageUrl: 'assets/certificates/pnrCertification.jpg',
+  },
+  {
+    name: 'Google Cloud Digital Leader Certification',
+    description:
+      'This certification tested my knowledge of Google Cloud Platform and terminology used in it',
+    imageUrl: 'assets/certificates/googleCloudCertification.png',
+  },
+  {
+    name: 'Upwork Earnings',
+    description:
+      'I have earned more than 10k USD on Upwork and worked under different clients and projects',
+    imageUrl: 'assets/certificates/upWorkCertification.png',
+  },
+];
+
+//OBJECTS------
 
 export const PERSONALINFO: PersonalInfo = {
   name: 'Ankur Deshwal',

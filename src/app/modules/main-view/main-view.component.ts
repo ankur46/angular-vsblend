@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
+import { AccomplishmentComponent } from '../../ankurDeshwal/accomplishment/accomplishment.component';
 import { ContactLinksComponent } from '../../ankurDeshwal/contact-links/contact-links.component';
 import { EmploymentComponent } from '../../ankurDeshwal/employment/employment.component';
 import { IntroductionComponent } from '../../ankurDeshwal/introduction/introduction.component';
@@ -19,6 +20,7 @@ import { NgSrcDirective } from '../../shared/directives/ngsrc.directive';
     TechstackComponent,
     EmploymentComponent,
     ContactLinksComponent,
+    AccomplishmentComponent,
   ],
   templateUrl: './main-view.component.html',
   styleUrl: './main-view.component.scss',

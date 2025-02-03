@@ -36,3 +36,9 @@ export type ContactLinks = {
   name: string;
   url: string;
 };
+
+export type Accomplishment = {
+  name: string;
+  description: string;
+  imageUrl: string;
+};
