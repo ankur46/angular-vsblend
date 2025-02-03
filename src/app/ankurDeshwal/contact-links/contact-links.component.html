@@ -1,0 +1,10 @@
+<main class="flex flex-col gap-2 mt-4">
+  <pre>
+    <span class="text-blue-600" [innerHTML]="'{'"></span>
+    @for(item of contactLinks;track trackByItem){
+      <span class="text-black">{{item.name}}</span>: <a target="_blank" class="text-amber-500 font-medium hover:text-amber-700" [href]="item.url"  >"{{item.url}}"</a>,
+    }
+    <span></span>
+    <span class="text-blue-600" [innerHTML]="'}'"></span>
+  </pre>
+</main>

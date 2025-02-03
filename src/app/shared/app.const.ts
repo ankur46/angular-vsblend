@@ -1,4 +1,5 @@
 import {
+  ContactLinks,
   EmploymentInfo,
   FileTree,
   PersonalInfo,
@@ -205,14 +206,14 @@ export const TECHSTACKINFO: TechStack[] = [
 
 export const EMPLOYMENTINFO: EmploymentInfo[] = [
   {
-    name: 'BNY Mellon',
-    companyUrl: `https://www.bny.com/corporate/global/en/about-us/about-bny.html`,
-    logoUrl: 'assets/other-images/bnyMellon.png',
-    description: 'Global financial services company',
-    startYear: 2017,
-    endYear: 2019,
+    name: 'Persistent Systems',
+    companyUrl: `https://www.persistent.com/company-overview/`,
+    logoUrl: 'assets/other-images/persistent.png',
+    description: 'Digital Engineering and Enterprise Modernization partner',
+    startYear: 2020,
+    endYear: 0,
     projectCompleted: 5,
-    role: 'Software Engineer',
+    role: 'Senior Engineering Lead',
   },
   {
     name: 'Coditas',
@@ -225,18 +226,16 @@ export const EMPLOYMENTINFO: EmploymentInfo[] = [
     role: 'UI Developer',
   },
   {
-    name: 'Persistent Systems',
-    companyUrl: `https://www.persistent.com/company-overview/`,
-    logoUrl: 'assets/other-images/persistent.png',
-    description: 'Digital Engineering and Enterprise Modernization partner',
-    startYear: 2020,
-    endYear: 0,
+    name: 'BNY Mellon',
+    companyUrl: `https://www.bny.com/corporate/global/en/about-us/about-bny.html`,
+    logoUrl: 'assets/other-images/bnyMellon.png',
+    description: 'Global financial services company',
+    startYear: 2017,
+    endYear: 2019,
     projectCompleted: 5,
-    role: 'Senior Engineering Lead',
+    role: 'Software Engineer',
   },
 ];
-
-//OBJECTS------
 
 export const FILETREE: FileTree[] = [
   {
@@ -254,7 +253,25 @@ export const FILETREE: FileTree[] = [
         name: 'employment.component.ts',
         iconUrl: 'assets/file-icons/typescriptFile.svg',
       },
+      {
+        name: 'contact.json',
+        iconUrl: 'assets/file-icons/jsonFile.svg',
+      },
     ],
+  },
+];
+
+//OBJECTS------
+
+export const CONTACTSANDLINKS: ContactLinks[] = [
+  { name: 'Github', url: 'https://github.com/ankur46' },
+  { name: 'Linkdin', url: 'https://www.linkedin.com/in/ankur-deshwal/' },
+  { name: 'Portfolio', url: 'https://www.angularVsBlend.com/' },
+  { name: 'Phone No ', url: '+91 7696-05-6272' },
+  { name: 'Email Id', url: 'deshwal.ankur18@gmail.com' },
+  {
+    name: 'Upwork Id',
+    url: 'https://www.upwork.com/freelancers/~01b3adaa988b028ff3',
   },
 ];
 

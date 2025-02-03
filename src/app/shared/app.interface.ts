@@ -31,3 +31,8 @@ export type EmploymentInfo = {
   projectCompleted: number;
   role: string;
 };
+
+export type ContactLinks = {
+  name: string;
+  url: string;
+};
