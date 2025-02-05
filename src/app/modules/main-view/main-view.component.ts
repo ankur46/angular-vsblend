@@ -6,6 +6,7 @@ import { AccomplishmentComponent } from '../../ankurDeshwal/accomplishment/accom
 import { ContactLinksComponent } from '../../ankurDeshwal/contact-links/contact-links.component';
 import { EmploymentComponent } from '../../ankurDeshwal/employment/employment.component';
 import { IntroductionComponent } from '../../ankurDeshwal/introduction/introduction.component';
+import { PersonalDetailsComponent } from '../../ankurDeshwal/personal-details/personal-details.component';
 import { TechstackComponent } from '../../ankurDeshwal/techstack/techstack.component';
 import { NgSrcDirective } from '../../shared/directives/ngsrc.directive';
 @Component({
@@ -21,6 +22,7 @@ import { NgSrcDirective } from '../../shared/directives/ngsrc.directive';
     EmploymentComponent,
     ContactLinksComponent,
     AccomplishmentComponent,
+    PersonalDetailsComponent,
   ],
   templateUrl: './main-view.component.html',
   styleUrl: './main-view.component.scss',

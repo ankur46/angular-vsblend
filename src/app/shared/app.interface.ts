@@ -6,8 +6,15 @@ export type FileTree = {
 
 export type PersonalInfo = {
   name: string;
-  designation: string;
-  displayPictureUrl: string;
+  designation?: string;
+  displayPictureUrl?: string;
+  age: number;
+  birthPlace: string;
+  totalExperience: number;
+  workLocation: string[];
+  totalProjects: number;
+  hobbies: string[];
+  totalCompanies: number;
 };
 
 export type TechStack = {
@@ -41,4 +48,9 @@ export type Accomplishment = {
   name: string;
   description: string;
   imageUrl: string;
+};
+
+export type PersonalDetailDisplayFields = {
+  name: string;
+  key: string;
 };

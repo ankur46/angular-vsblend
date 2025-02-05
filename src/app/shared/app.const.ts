@@ -3,6 +3,7 @@ import {
   ContactLinks,
   EmploymentInfo,
   FileTree,
+  PersonalDetailDisplayFields,
   PersonalInfo,
   TechStack,
 } from './app.interface';
@@ -262,6 +263,10 @@ export const FILETREE: FileTree[] = [
         name: 'accomplishment.component.ts',
         iconUrl: 'assets/file-icons/typescriptFile.svg',
       },
+      {
+        name: 'personalDetail.component.html',
+        iconUrl: 'assets/file-icons/htmlFile.svg',
+      },
     ],
   },
 ];
@@ -329,10 +334,28 @@ export const ACCOMPLISHMENT: Accomplishment[] = [
   },
 ];
 
+export const PERSONALDETAILDISPLAYFIELDS: PersonalDetailDisplayFields[] = [
+  { name: 'Full Name', key: 'name' },
+  { name: 'Age', key: 'age' },
+  { name: 'Birth Place', key: 'birthPlace' },
+  { name: 'Total Experience', key: 'totalExperience' },
+  { name: 'Work Location', key: 'workLocation' },
+  { name: 'Total Projects', key: 'totalProjects' },
+  { name: 'Hobbies', key: 'hobbies' },
+  { name: 'Total Companies', key: 'totalCompanies' },
+];
+
 //OBJECTS------
 
 export const PERSONALINFO: PersonalInfo = {
   name: 'Ankur Deshwal',
   designation: 'Senior Engineering Lead',
   displayPictureUrl: 'assets/other-images/displayPicture.png',
+  age: 29,
+  birthPlace: 'Chandigarh',
+  totalExperience: 6,
+  workLocation: ['Gurugram', 'Noida', 'Pune'],
+  totalProjects: 15,
+  hobbies: ['Running', 'Cycling', 'Chess'],
+  totalCompanies: 3,
 };

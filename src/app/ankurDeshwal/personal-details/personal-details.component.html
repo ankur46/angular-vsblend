@@ -1,0 +1,31 @@
+<main class="flex flex-grow h-full p-4 gap-12">
+  <section class="border-r-2 w-1/2 bg-gray-100">
+    <pre class="code-block text-sky-700">{{ getSnippet }}</pre>
+  </section>
+  <section class="w-1/2">
+    <form class="flex flex-col gap-1" [formGroup]="personalDetailsForm">
+      @for (item of displayFields; track trackByItem) {
+        <ng-container
+          *ngTemplateOutlet="
+            inputElement;
+            context: { label: item.name | titlecase, value: item.key }
+          "
+        />
+      }
+    </form>
+  </section>
+</main>
+
+<ng-template
+  #inputElement
+  let-label="label"
+  let-value="value"
+  let-group="group"
+>
+  <div class="grid grid-cols-2 gap-1 items-center border-b-2 border-gray-100">
+    <mat-label>{{ label }}</mat-label>
+    <mat-form-field [formGroup]="personalDetailsForm">
+      <input matInput readonly [formControlName]="value" />
+    </mat-form-field>
+  </div>
+</ng-template>
