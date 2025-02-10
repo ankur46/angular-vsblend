@@ -54,3 +54,11 @@ export type PersonalDetailDisplayFields = {
   name: string;
   key: string;
 };
+
+export type Project = {
+  name: string;
+  description: string;
+  imageUrl: string;
+  techUsed: string[];
+  keyFeatures: string[];
+};
