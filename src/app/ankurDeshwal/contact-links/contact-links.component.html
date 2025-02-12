@@ -1,10 +1,14 @@
-<main class="flex flex-col gap-2 mt-4">
-  <pre>
-    <span class="text-blue-600" [innerHTML]="'{'"></span>
+<main
+  class="flex flex-col p-6 bg-gradient-to-r from-blue-200 to-sky-100 h-full"
+>
+  <pre
+    class="p-4 bg-gradient-to-r from-blue-400 to-sky-500 rounded-md shadow-lg font-mono"
+  >
+    <span class="text-white" [innerHTML]="'{'"></span>
     @for(item of contactLinks;track trackByItem){
-      <span class="text-black">{{item.name}}</span>: <a target="_blank" class="text-amber-500 font-medium hover:text-amber-700" [href]="item.url"  >"{{item.url}}"</a>,
+      <span class="text-black drop-shadow-md">{{item.name}}</span>: <a target="_blank" class="text-white/80 font-medium hover:font-semibold drop-shadow-sm" [href]="item.url"  >"{{item.url}}"</a>,
     }
     <span></span>
-    <span class="text-blue-600" [innerHTML]="'}'"></span>
+    <span class="text-white" [innerHTML]="'}'"></span>
   </pre>
 </main>
