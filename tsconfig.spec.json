@@ -3,7 +3,9 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
-    "types": ["jasmine", "@angular/localize"]
+    "types": ["jasmine", "@angular/localize", "node"],
+    "moduleResolution": "node",
+    "strict": false
   },
   "include": ["src/**/*.spec.ts", "src/**/*.d.ts"]
 }

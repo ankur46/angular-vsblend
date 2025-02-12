@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FILETREE } from '../../shared/app.const';
 import { FileTree } from '../../shared/app.interface';
 import { NgSrcDirective } from '../../shared/directives/ngsrc.directive';
+import { NavigationService } from '../../shared/navigation.service';
 import { TrackClass } from '../../shared/trackClass';
 
 @Component({
@@ -16,4 +17,8 @@ import { TrackClass } from '../../shared/trackClass';
 })
 export class FileNamePanelComponent extends TrackClass {
   protected treeDataSource: FileTree[] = FILETREE;
+
+  constructor(protected navigationService: NavigationService) {
+    super();
+  }
 }

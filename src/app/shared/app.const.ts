@@ -242,35 +242,57 @@ export const EMPLOYMENTINFO: EmploymentInfo[] = [
 
 export const FILETREE: FileTree[] = [
   {
+    id: 1,
     name: 'ANKUR DESHWAL',
     children: [
       {
+        id: 1,
         name: 'introduction.html',
         iconUrl: 'assets/file-icons/htmlFile.svg',
+        inView: false,
+        componentName: 'IntroductionComponent',
       },
       {
+        id: 2,
         name: 'techstack.component.ts',
         iconUrl: 'assets/file-icons/typescriptFile.svg',
+        inView: false,
+        componentName: 'TechstackComponent',
       },
       {
+        id: 3,
         name: 'employment.component.ts',
         iconUrl: 'assets/file-icons/typescriptFile.svg',
+        inView: false,
+        componentName: 'EmploymentComponent',
       },
       {
+        id: 4,
         name: 'contact.json',
         iconUrl: 'assets/file-icons/jsonFile.svg',
+        inView: false,
+        componentName: 'ContactLinksComponent',
       },
       {
+        id: 5,
         name: 'accomplishment.component.ts',
         iconUrl: 'assets/file-icons/typescriptFile.svg',
+        inView: false,
+        componentName: 'AccomplishmentComponent',
       },
       {
+        id: 6,
         name: 'personalDetail.component.html',
         iconUrl: 'assets/file-icons/htmlFile.svg',
+        inView: false,
+        componentName: 'PersonalDetailsComponent',
       },
       {
+        id: 7,
         name: 'projects.guard.ts',
         iconUrl: 'assets/file-icons/angularFile.svg',
+        inView: false,
+        componentName: 'ProjectsComponent',
       },
     ],
   },

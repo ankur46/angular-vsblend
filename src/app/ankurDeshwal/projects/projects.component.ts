@@ -17,5 +17,6 @@ import { TrackClass } from '../../shared/trackClass';
 })
 export class ProjectsComponent extends TrackClass {
   protected projects: Project[] = PROJECTDETAILS;
-  protected isExpanded = false;
+
+  protected expandState: boolean[] = [];
 }

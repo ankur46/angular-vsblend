@@ -2,14 +2,10 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
-import { AccomplishmentComponent } from '../../ankurDeshwal/accomplishment/accomplishment.component';
-import { ContactLinksComponent } from '../../ankurDeshwal/contact-links/contact-links.component';
-import { EmploymentComponent } from '../../ankurDeshwal/employment/employment.component';
-import { IntroductionComponent } from '../../ankurDeshwal/introduction/introduction.component';
-import { PersonalDetailsComponent } from '../../ankurDeshwal/personal-details/personal-details.component';
-import { ProjectsComponent } from '../../ankurDeshwal/projects/projects.component';
-import { TechstackComponent } from '../../ankurDeshwal/techstack/techstack.component';
+import { ProfileComponents } from '../../shared/componentImports/profile-component.const';
 import { NgSrcDirective } from '../../shared/directives/ngsrc.directive';
+import { NavigationService } from '../../shared/navigation.service';
+import { TrackClass } from '../../shared/trackClass';
 @Component({
   selector: 'app-main-view',
   standalone: true,
@@ -18,16 +14,25 @@ import { NgSrcDirective } from '../../shared/directives/ngsrc.directive';
     MatIconModule,
     NgSrcDirective,
     CommonModule,
-    IntroductionComponent,
-    TechstackComponent,
-    EmploymentComponent,
-    ContactLinksComponent,
-    AccomplishmentComponent,
-    PersonalDetailsComponent,
-    ProjectsComponent,
+    ProfileComponents,
   ],
   templateUrl: './main-view.component.html',
   styleUrl: './main-view.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MainViewComponent {}
+export class MainViewComponent extends TrackClass {
+  constructor(protected navigationService: NavigationService) {
+    super();
+  }
+
+  protected getComponent(componentName: string) {
+    const index = ProfileComponents.findIndex(
+      (component) => component.name === `_${componentName}`,
+    );
+    if (index !== -1) {
+      return ProfileComponents[index];
+    } else {
+      return ProfileComponents[0];
+    }
+  }
+}

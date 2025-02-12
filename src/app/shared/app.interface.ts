@@ -1,7 +1,15 @@
 export type FileTree = {
+  id: number;
   name: string;
-  children?: FileTree[];
-  iconUrl?: string;
+  children?: NavigationElement[];
+};
+
+export type NavigationElement = {
+  id: number;
+  name: string;
+  iconUrl: string;
+  inView: boolean;
+  componentName: string;
 };
 
 export type PersonalInfo = {

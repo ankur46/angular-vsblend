@@ -1,37 +1,48 @@
+<!-- eslint-disable @angular-eslint/template/no-call-expression -->
 <mat-tab-group
   class="flex flex-grow h-full"
   MatTabBodyPositionState="center"
   animationDuration="0ms"
+  [selectedIndex]="navigationService.getActive$.length - 1"
 >
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <ng-container
-        *ngTemplateOutlet="
-          headerTitle;
-          context: {
-            image: 'assets/file-icons/htmlFile.svg',
-            label: 'Welcome.html'
-          }
-        "
-      />
-    </ng-template>
-    <div class="h-[calc(100vh-18rem)]">
-      <app-introduction />
-      <!-- <app-techstack /> -->
-      <!-- <app-employment /> -->
-      <!-- <app-contact-links /> -->
-      <!-- <app-accomplishment /> -->
-      <!-- <app-personal-details /> -->
-      <!-- <app-projects /> -->
-    </div>
-  </mat-tab>
+  @for (navElement of navigationService.getActive$; track trackByItem) {
+    <mat-tab active>
+      <ng-template mat-tab-label>
+        <ng-container
+          *ngTemplateOutlet="
+            headerTitle;
+            context: {
+              navElement,
+              totalElements: navigationService.getActive$.length
+            }
+          "
+        />
+      </ng-template>
+      <div class="h-[calc(100vh-18rem)]">
+        <ng-container
+          *ngComponentOutlet="getComponent(navElement.componentName) ?? null"
+        />
+      </div>
+    </mat-tab>
+  }
 </mat-tab-group>
 
 <!-- To render tab header title we have added this template to reuse in different tabs. -->
-<ng-template #headerTitle let-image="image" let-label="label">
+<ng-template
+  #headerTitle
+  let-navElement="navElement"
+  let-totalElements="totalElements"
+>
   <div class="!group flex flex-row items-center justify-center">
-    <img alt="no-image" class="h-5 mr-2" [appNgSrc]="image" />
-    <span>{{ label }}</span>
-    <mat-icon class="!group-hover:block ml-1 text-lg mb-1">close</mat-icon>
+    <img alt="no-image" class="h-5 mr-2" [appNgSrc]="navElement.iconUrl" />
+    <span>{{ navElement.name }}</span>
+    @if (totalElements > 1) {
+      <mat-icon
+        class="!group-hover:block ml-1 text-lg mb-1"
+        (click)="navigationService.toggleInView(navElement, false)"
+      >
+        close
+      </mat-icon>
+    }
   </div>
 </ng-template>
