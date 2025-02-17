@@ -7,8 +7,7 @@ import { PersonalDetailsComponent } from '../../ankurDeshwal/personal-details/pe
 import { ProjectsComponent } from '../../ankurDeshwal/projects/projects.component';
 import { TechstackComponent } from '../../ankurDeshwal/techstack/techstack.component';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const ProfileComponents: Type<any>[] = [
+export const ProfileComponents: Type<unknown>[] = [
   PersonalDetailsComponent,
   TechstackComponent,
   EmploymentComponent,

@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
-import { ProfileComponents } from '../../shared/componentImports/profile-component.const';
+import { DynamicComponentDirective } from '../../shared/directives/dynamicComponent.directive';
 import { NgSrcDirective } from '../../shared/directives/ngsrc.directive';
-import { NavigationService } from '../../shared/navigation.service';
+import { NavigationService } from '../../shared/services/navigation.service';
 import { TrackClass } from '../../shared/trackClass';
 @Component({
   selector: 'app-main-view',
@@ -14,7 +14,7 @@ import { TrackClass } from '../../shared/trackClass';
     MatIconModule,
     NgSrcDirective,
     CommonModule,
-    ProfileComponents,
+    DynamicComponentDirective,
   ],
   templateUrl: './main-view.component.html',
   styleUrl: './main-view.component.scss',
@@ -23,16 +23,5 @@ import { TrackClass } from '../../shared/trackClass';
 export class MainViewComponent extends TrackClass {
   constructor(protected navigationService: NavigationService) {
     super();
-  }
-
-  protected getComponent(componentName: string) {
-    const index = ProfileComponents.findIndex(
-      (component) => component.name === `_${componentName}`,
-    );
-    if (index !== -1) {
-      return ProfileComponents[index];
-    } else {
-      return ProfileComponents[0];
-    }
   }
 }

@@ -650,3 +650,13 @@ export const PERSONALINFO: PersonalInfo = {
   hobbies: ['Running', 'Cycling', 'Chess'],
   totalCompanies: 3,
 };
+
+//ENUMS------
+
+export enum ICONMAPPING {
+  'parentfiles' = 'FileComponent',
+  'search' = 'SearchComponent',
+  'gitmerger' = 'GitComponent',
+  'debugger' = 'DebuggerComponent',
+  'extension' = 'ExtensionsComponent',
+}

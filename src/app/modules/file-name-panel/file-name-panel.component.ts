@@ -1,24 +1,17 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { FILETREE } from '../../shared/app.const';
-import { FileTree } from '../../shared/app.interface';
-import { NgSrcDirective } from '../../shared/directives/ngsrc.directive';
-import { NavigationService } from '../../shared/navigation.service';
 import { TrackClass } from '../../shared/trackClass';
+import { FileComponent } from './file/file.component';
 
 @Component({
   selector: 'app-file-name-panel',
   standalone: true,
-  imports: [MatIconModule, CommonModule, NgSrcDirective],
+  imports: [FileComponent, MatIconModule],
   templateUrl: './file-name-panel.component.html',
   styleUrl: './file-name-panel.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FileNamePanelComponent extends TrackClass {
-  protected treeDataSource: FileTree[] = FILETREE;
-
-  constructor(protected navigationService: NavigationService) {
-    super();
-  }
+  // @Input({ required: true }) headerData = '';
+  // @Input({}) component = '';
 }

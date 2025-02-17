@@ -1,6 +1,6 @@
 import { Injectable, signal, WritableSignal } from '@angular/core';
-import { FILETREE } from './app.const';
-import { NavigationElement } from './app.interface';
+import { FILETREE } from '../app.const';
+import { NavigationElement } from '../app.interface';
 
 @Injectable({
   providedIn: 'root',

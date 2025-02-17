@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { NavigationService } from '../../shared/navigation.service';
+import { NavigationService } from '../../shared/services/navigation.service';
 import { TrackClass } from '../../shared/trackClass';
 import { IconPanelService } from './icon-panel.service';
 @Component({
