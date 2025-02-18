@@ -3,7 +3,7 @@
   class="flex flex-grow h-full"
   MatTabBodyPositionState="center"
   animationDuration="0ms"
-  [selectedIndex]="navigationService.getActive$.length - 1"
+  [selectedIndex]="navigationService.getVisibleElementIndex$"
 >
   @for (navElement of navigationService.getActive$; track trackByItem) {
     <mat-tab active>

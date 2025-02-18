@@ -50,8 +50,7 @@ export class IntroductionComponent extends TrackClass implements OnInit {
     const projectElement = this._navigationService.getAll$.find(
       (ele) => ele.id === 7,
     );
-    if (projectElement) {
+    projectElement &&
       this._navigationService.toggleInView(projectElement, true);
-    }
   }
 }

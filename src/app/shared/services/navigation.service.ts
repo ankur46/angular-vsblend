@@ -6,10 +6,18 @@ import { NavigationElement } from '../app.interface';
   providedIn: 'root',
 })
 export class NavigationService {
-  navigationElements: WritableSignal<NavigationElement[]> = signal(
+  protected navigationElements: WritableSignal<NavigationElement[]> = signal(
     FILETREE[0]?.children ?? [],
   );
-  activeElements: WritableSignal<NavigationElement[]> = signal([]);
+  protected activeElements: WritableSignal<NavigationElement[]> = signal([]);
+  protected visibleElementIndex: WritableSignal<number> = signal(0);
+
+  private set setVisibilityIndex(id: number) {
+    const index = this.getActive$.findIndex((ele) => ele.id === id);
+    this.visibleElementIndex.set(
+      index !== -1 ? index : this.getActive$.length - 1,
+    );
+  }
 
   private update(element: NavigationElement, inView: boolean): void {
     const currentElements: NavigationElement[] = this.getActive$;
@@ -20,19 +28,16 @@ export class NavigationService {
         currentElements.push(element);
 
         // Limit the number of elements to 3
-        if (currentElements.length > 3) {
-          currentElements.shift();
-        }
+        currentElements.length > 3 && currentElements.shift();
       }
     } else {
       const index = currentElements.findIndex(
         (ele: NavigationElement) => ele.id === element.id,
       );
-      if (index !== -1) {
-        currentElements.splice(index, 1);
-      }
+      index !== -1 && currentElements.splice(index, 1);
     }
     this.activeElements.set(currentElements.map((el: NavigationElement) => el));
+    this.setVisibilityIndex = element.id;
   }
 
   get getAll$(): NavigationElement[] {
@@ -41,6 +46,10 @@ export class NavigationService {
 
   get getActive$(): NavigationElement[] {
     return this.activeElements();
+  }
+
+  get getVisibleElementIndex$(): number {
+    return this.visibleElementIndex();
   }
 
   public toggleInView(element: NavigationElement, inView: boolean): void {
