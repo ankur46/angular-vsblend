@@ -37,10 +37,13 @@ export const TERMINALICONS: string[] = [
   'ellipsis',
   'close',
 ];
+
+export const RESTICONS: string[] = ['matchCase', 'matchWord'];
 export const OTHERICONS: string[] = [
   ...SEARCHICONS,
   ...LAYOUTICONS,
   ...TERMINALICONS,
+  ...RESTICONS,
 ];
 
 export const TERMINALTABS: string[] = [
