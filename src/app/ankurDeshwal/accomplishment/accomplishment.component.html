@@ -1,22 +1,44 @@
-<main class="flex flex-col p-12 gap-12">
-  <div class="flex flex-col gap-1">
-    <span>{{ "@AngularVsBlend" }}</span>
-    <h1 class="text-2xl font-thin">
-      <span class="font-medium">Accomplishments</span>
-      extends customCard
+<main
+  class="flex flex-col p-12 gap-12 bg-gradient-to-r from-blue-200 to-sky-100"
+>
+  <div
+    class="flex flex-col gap-2 p-4 bg-gradient-to-r from-blue-200 to-sky-100 shadow-lg rounded-lg text-gray-800 w-full"
+  >
+    <span class="text-sm text-gray-500 tracking-wide">
+      {{ "@AngularVsBlend" }}
+    </span>
+
+    <h1 class="text-3xl font-light flex items-center gap-2">
+      <span class="font-semibold text-sky-600">Accomplishments</span>
+      <span class="text-gray-500">extends</span>
+      <span class="bg-sky-500 text-white px-3 py-1 rounded-md shadow-md">
+        customCard
+      </span>
     </h1>
   </div>
-  <section class="grid grid-cols-2 gap-4 w-auto">
+
+  <section class="grid grid-cols-2 gap-6 w-auto">
     @for (item of accomplishment; track trackByItem) {
       <div
-        class="flex gap-5 border-b-2 border-sky-500 p-2 bg-gray-100 rounded-t-lg"
+        class="flex gap-5 p-4 bg-gradient-to-r from-blue-400 to-sky-500 shadow-lg rounded-lg"
       >
-        <div class="w-[10em] flex items-center">
-          <img class="bg-white" [appNgSrc]="item.imageUrl" [alt]="item.name" />
+        <!-- Image Section -->
+
+        <!-- Content Section -->
+        <div class="flex flex-col gap-2">
+          <h2 class="text-xl font-semibold text-white drop-shadow-md">
+            {{ item.name }}
+          </h2>
+          <p class="text-sm text-white/80">{{ item.description }}</p>
         </div>
-        <div class="flex flex-col gap-1">
-          <h2 class="text-lg font-medium text-sky-500">{{ item.name }}</h2>
-          <p class="text-sm opacity-60">{{ item.description }}</p>
+        <div
+          class="w-[20em] flex items-center bg-white rounded-lg shadow-md p-0.5"
+        >
+          <img
+            class="object-cover rounded-md"
+            [appNgSrc]="item.imageUrl"
+            [alt]="item.name"
+          />
         </div>
       </div>
     }
