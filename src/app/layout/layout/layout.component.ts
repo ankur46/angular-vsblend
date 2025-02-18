@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { IconPanelService } from '../../modules/icon-panel/icon-panel.service';
 import { LayoutComponents } from '../../shared/componentImports/layout-component.const';
 
 @Component({
@@ -7,7 +8,8 @@ import { LayoutComponents } from '../../shared/componentImports/layout-component
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
   imports: [...LayoutComponents],
+  providers: [IconPanelService],
 })
 export class LayoutComponent {
-  layoutUi = '';
+  protected iconService = inject(IconPanelService);
 }

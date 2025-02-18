@@ -2,6 +2,7 @@ import {
   Accomplishment,
   ContactLinks,
   EmploymentInfo,
+  FilePanelObject,
   FileTree,
   PersonalDetailDisplayFields,
   PersonalInfo,
@@ -633,6 +634,34 @@ This approach significantly reduced development time while maintaining a standar
       'Consistent Design & Functionality - Ensures uniform UI across projects',
       'Supports Nested Components - Easily manage complex UI layouts',
     ],
+  },
+];
+
+export const FILEPANELOBJECT: FilePanelObject[] = [
+  {
+    panelIcon: 'parentfiles',
+    headerName: { name: 'EXPLORER', iconName: 'more_horiz' },
+    componentNames: 'FileComponent',
+  },
+  {
+    panelIcon: 'search',
+    headerName: { name: 'SEARCH', iconName: 'more_horiz' },
+    componentNames: 'SearchComponent',
+  },
+  {
+    panelIcon: 'gitmerger',
+    headerName: { name: 'SOURCE CONTROL' },
+    componentNames: 'GitComponent',
+  },
+  {
+    panelIcon: 'debugger',
+    headerName: { name: 'RUN AND DEBUG: RUN', iconName: 'more_horiz' },
+    componentNames: 'DebuggerComponent',
+  },
+  {
+    panelIcon: 'extension',
+    headerName: { name: 'EXTENSIONS', iconName: 'more_horiz' },
+    componentNames: 'ExtensionsComponent',
   },
 ];
 

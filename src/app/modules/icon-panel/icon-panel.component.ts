@@ -10,13 +10,11 @@ import { IconPanelService } from './icon-panel.service';
   imports: [MatIconModule, CommonModule],
   templateUrl: './icon-panel.component.html',
   styleUrl: './icon-panel.component.scss',
-  providers: [IconPanelService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class IconPanelComponent extends TrackClass {
   protected iconpanelService = inject(IconPanelService);
   protected svgIcons: string[] = this.iconpanelService.SvgIcons;
-  protected iconSelectedName: string = this.svgIcons[0] ?? '';
 
   constructor(protected navigationService: NavigationService) {
     super();

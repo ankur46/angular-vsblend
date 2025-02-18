@@ -70,3 +70,14 @@ export type Project = {
   techUsed: string[];
   keyFeatures: string[];
 };
+
+export type FilePanelObject = {
+  panelIcon: string;
+  headerName: FilePanelObjectHeader;
+  componentNames: string;
+};
+
+export type FilePanelObjectHeader = {
+  name: string;
+  iconName?: string;
+};
