@@ -17,4 +17,9 @@ export class TerminalComponent extends TrackClass {
   protected terminalTabs: string[] = TERMINALTABS;
   protected selectedTab = 'TERMINAL';
   protected vsFooter: string[] = VSFOOTER;
+  protected _isTerminalExpanded = true;
+
+  protected minimizeTerminal(minimized: boolean): void {
+    this._isTerminalExpanded = !minimized;
+  }
 }

@@ -1,5 +1,6 @@
 <main
-  class="flex border-t-2 border-blue-200 min-h-52 flex-col bg-gradient-to-br from-blue-200 to-sky-100"
+  class="flex border-t-2 border-blue-200 flex-col bg-gradient-to-br from-blue-200 to-sky-100"
+  [ngClass]="{ 'min-h-52': _isTerminalExpanded }"
 >
   <section class="flex flex-grow h-full">
     <div class="flex flex-grow flex-col mx-4 py-2">
@@ -15,39 +16,51 @@
           </span>
         }
       </div>
-      <div class="flex flex-grow my-3 flex-col text-xs font-mono">
-        <span class="text-pink-400">Server bundles</span>
-        <table class="w-1/2">
-          <thead>
-            <tr class="font-medium">
-              <td>Initial chunk files</td>
-              <td>Names</td>
-              <td>Raw size</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>main.server.mjs</td>
-              <td>main.server</td>
-              <td>863.96 kB</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="mt-2">
-          Application bundle generation complete. [3.824 seconds]
-        </p>
-        <p class="mt-2">Page reload sent to client(s).</p>
-      </div>
+      @if (_isTerminalExpanded) {
+        <div class="flex flex-grow my-3 flex-col text-xs font-mono">
+          <span class="text-pink-400">Server bundles</span>
+          <table class="w-1/2">
+            <thead>
+              <tr class="font-medium">
+                <td>Initial chunk files</td>
+                <td>Names</td>
+                <td>Raw size</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>main.server.mjs</td>
+                <td>main.server</td>
+                <td>863.96 kB</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="mt-2">
+            Application bundle generation complete. [3.824 seconds]
+          </p>
+          <p class="mt-2">Page reload sent to client(s).</p>
+        </div>
+      }
     </div>
-    <div class="flex justify-end flex-grow items-start py-2 mx-4 space-x-2">
+    <div
+      class="flex justify-end flex-grow items-start py-2 mx-4 space-x-2 cursor-pointer"
+    >
       <div class="flex items-center gap-1">
         <mat-icon class="small-custom-icon" [svgIcon]="'terminal'" />
         <span class="text-xs">node</span>
       </div>
       <mat-icon class="small-custom-icon" [svgIcon]="'add'" />
       <mat-icon class="small-custom-icon" [svgIcon]="'ellipsis'" />
-      <mat-icon class="small-custom-icon" [svgIcon]="'chevronup'" />
-      <mat-icon class="small-custom-icon" [svgIcon]="'close'" />
+      <mat-icon
+        class="small-custom-icon"
+        [svgIcon]="'chevronup'"
+        (click)="minimizeTerminal(false)"
+      />
+      <mat-icon
+        class="small-custom-icon"
+        [svgIcon]="'close'"
+        (click)="minimizeTerminal(true)"
+      />
     </div>
   </section>
   <section
