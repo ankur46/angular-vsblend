@@ -6,7 +6,11 @@ import {
   signal,
   WritableSignal,
 } from '@angular/core';
-import { PERSONALINFO, PROJECTDETAILS } from '../../shared/app.const';
+import {
+  PENDINGTODOS,
+  PERSONALINFO,
+  PROJECTDETAILS,
+} from '../../shared/app.const';
 import {
   NavigationElement,
   PersonalInfo,
@@ -28,6 +32,8 @@ export class IntroductionComponent extends TrackClass implements OnInit {
   protected personalInfo: PersonalInfo = PERSONALINFO;
   protected recentFiles: WritableSignal<NavigationElement[]> = signal([]);
   protected walkthroughProjects: WritableSignal<Project[]> = signal([]);
+  protected pendingTodos = PENDINGTODOS;
+
   constructor(protected _navigationService: NavigationService) {
     super();
   }

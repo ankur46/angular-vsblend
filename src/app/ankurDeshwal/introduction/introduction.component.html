@@ -96,5 +96,19 @@
     </div>
   </section>
 
+  <section
+    class="col-span-2 flex flex-col gap-4 p-6 shadow-lg rounded-xl border-4 border-white bg-gradient-to-r from-blue-400 to-sky-500"
+  >
+    <h1 class="text-xl font-semibold text-white drop-shadow-md">
+      Pending TODO's
+    </h1>
+    <div class="flex flex-col gap-2">
+      @for (todo of pendingTodos; track trackByItem) {
+        <div class="mt-2 py-1 px-3 bg-white bg-opacity-20 rounded-lg">
+          <li class="text-white/80 text-sm px-2 py-1">{{ todo }}</li>
+        </div>
+      }
+    </div>
+  </section>
   <section class="h-10 col-span-2"></section>
 </main>

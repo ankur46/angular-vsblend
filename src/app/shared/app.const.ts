@@ -668,6 +668,11 @@ export const FILEPANELOBJECT: FilePanelObject[] = [
   },
 ];
 
+export const PENDINGTODOS: string[] = [
+  "Implement 'Search' functionality",
+  "Introduce 'Dark Mode' theme",
+  'Create Custom Card Component',
+];
 //OBJECTS------
 
 export const PERSONALINFO: PersonalInfo = {
