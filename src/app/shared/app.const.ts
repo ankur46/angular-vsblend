@@ -305,7 +305,10 @@ export const FILETREE: FileTree[] = [
 export const CONTACTSANDLINKS: ContactLinks[] = [
   { name: 'Github', url: 'https://github.com/ankur46' },
   { name: 'Linkdin', url: 'https://www.linkedin.com/in/ankur-deshwal/' },
-  { name: 'Portfolio', url: 'https://www.angularVsBlend.com/' },
+  {
+    name: 'Portfolio Doc',
+    url: 'https://melodic-arthropod-f22.notion.site/Angular-VSBlend-fea1657f26ca49b085e1df62660ebcda',
+  },
   { name: 'Phone No ', url: '+91 7696-05-6272' },
   { name: 'Email Id', url: 'deshwal.ankur18@gmail.com' },
   {
@@ -680,7 +683,7 @@ export const PERSONALINFO: PersonalInfo = {
   designation: 'Senior Engineering Lead',
   displayPictureUrl: 'assets/other-images/displayPicture.png',
   age: 29,
-  birthPlace: 'Chandigarh',
+  birthPlace: 'Chandigarh,India',
   totalExperience: 6,
   workLocation: ['Gurugram', 'Noida', 'Pune'],
   totalProjects: 15,
