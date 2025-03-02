@@ -30,10 +30,15 @@ export class SharedService {
     parentName: string,
   ): Type<unknown> | undefined {
     this.setParentComponentArray = parentName;
-    console.log('🚀 ~ SharedService ~ parentName:', parentName, componentName);
+    console.log(
+      '🚀 ~ SharedService ~ parentName:',
+      parentName,
+      componentName,
+      this.parentComponentArray,
+    );
     // Find the component with the matching name
     const index: number = this.parentComponentArray.findIndex(
-      (component) => component.name === componentName,
+      (component) => component.name === `_${componentName}`,
     );
 
     // Return the component if found, otherwise return first element
