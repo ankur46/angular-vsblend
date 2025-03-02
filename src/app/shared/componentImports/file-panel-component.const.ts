@@ -6,8 +6,8 @@ import { GitComponent } from '../../modules/file-name-panel/git/git.component';
 import { SearchComponent } from '../../modules/file-name-panel/search/search.component';
 
 export const FilePanelComponents: Type<unknown>[] = [
-  SearchComponent,
   FileComponent,
+  SearchComponent,
   GitComponent,
   DebuggerComponent,
   ExtensionsComponent,
