@@ -16,3 +16,13 @@ export const ProfileComponents: Type<unknown>[] = [
   IntroductionComponent,
   ProjectsComponent,
 ];
+
+export const profileComponentMap = new Map<string, Type<unknown>>([
+  ['PersonalDetailsComponent', PersonalDetailsComponent],
+  ['TechstackComponent', TechstackComponent],
+  ['EmploymentComponent', EmploymentComponent],
+  ['ContactLinksComponent', ContactLinksComponent],
+  ['AccomplishmentComponent', AccomplishmentComponent],
+  ['IntroductionComponent', IntroductionComponent],
+  ['ProjectsComponent', ProjectsComponent],
+]);

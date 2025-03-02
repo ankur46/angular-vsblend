@@ -12,3 +12,11 @@ export const FilePanelComponents: Type<unknown>[] = [
   DebuggerComponent,
   ExtensionsComponent,
 ];
+
+export const FileComponentMap = new Map<string, Type<unknown>>([
+  ['FileComponent', FileComponent],
+  ['SearchComponent', SearchComponent],
+  ['GitComponent', GitComponent],
+  ['DebuggerComponent', DebuggerComponent],
+  ['ExtensionsComponent', ExtensionsComponent],
+]);
