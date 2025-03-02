@@ -33,3 +33,44 @@ $light-theme: mat.define-light-theme(
   // typography and density styles.
   @include mat.all-component-colors($light-theme);
 }
+
+// mat-tab styling change to make the tabs as per vscode standards
+
+.mat-mdc-tab-group
+  .mat-mdc-tab-header
+  .mat-mdc-tab-label-container
+  .mat-mdc-tab-list
+  .mat-mdc-tab-labels {
+  .mdc-tab.mat-mdc-tab.mat-mdc-focus-indicator {
+    flex-grow: 0 !important;
+    border-left: 1px solid #fafafa !important;
+    background: #e5e7eb !important;
+    height: 35px !important;
+
+    /* stylelint-disable-next-line selector-class-pattern */
+    &.mdc-tab--active {
+      background: #fafafa !important;
+    }
+
+    .mdc-tab-indicator {
+      display: none !important;
+    }
+  }
+
+  /* stylelint-disable-next-line selector-class-pattern */
+  mdc-tab.mat-mdc-tab.mat-mdc-focus-indicator.mdc-tab--active.mdc-tab-indicator--active {
+    background: #fafafa !important;
+  }
+}
+
+.mat-mdc-tab-group {
+  .mat-mdc-tab-body-wrapper {
+    box-sizing: border-box;
+    height: 100%;
+    overflow: auto;
+  }
+}
+
+.mat-mdc-form-field-subscript-wrapper.mat-mdc-form-field-bottom-align {
+  display: none;
+}

@@ -1,0 +1,85 @@
+<main class="flex flex-col p-12 gap-12">
+  <div
+    class="flex flex-col gap-2 p-4 bg-gradient-to-r from-blue-200 to-sky-100 shadow-lg rounded-lg text-gray-800 w-full"
+  >
+    <span class="text-sm text-gray-500 tracking-wide">
+      {{ "@AngularVsBlend" }}
+    </span>
+
+    <h1 class="text-3xl font-light flex items-center gap-2">
+      <span class="font-semibold text-sky-600">Employment History</span>
+      <span class="text-gray-500">extends</span>
+      <span class="bg-sky-500 text-white px-3 py-1 rounded-md shadow-md">
+        customCard
+      </span>
+    </h1>
+  </div>
+
+  <section class="grid grid-cols-1 gap-6 w-auto">
+    @for (item of employmentInfo; track trackByItem) {
+      <div
+        class="flex flex-col gap-4 p-6 bg-gradient-to-r from-blue-400 to-sky-500 shadow-lg rounded-lg w-full"
+      >
+        <!-- Top Section -->
+        <div class="flex justify-between items-start">
+          <!-- Company Info -->
+          <div class="flex flex-col gap-2 w-1/2">
+            <h2 class="text-xl font-semibold text-white drop-shadow-md">
+              {{ item.name }}
+            </h2>
+            <p class="text-sm text-white/80">{{ item.description }}</p>
+
+            <div class="flex flex-wrap gap-2">
+              <ng-container
+                *ngTemplateOutlet="chips; context: { content: item.role }"
+              />
+              <ng-container
+                *ngTemplateOutlet="
+                  chips;
+                  context: {
+                    item: item,
+                    content: item.startYear + ' to ' + item.endYear,
+                    currentCompany: item.endYear === 0 ? true : false
+                  }
+                "
+              />
+              <ng-container
+                *ngTemplateOutlet="
+                  chips;
+                  context: { content: item.projectCompleted + ' projects' }
+                "
+              />
+            </div>
+          </div>
+
+          <!-- Company Logo -->
+          <div
+            class="flex items-center overflow-hidden rounded-lg bg-white p-2 shadow-md"
+          >
+            <img
+              class="max-w-[15em] w-full h-auto object-cover rounded-md"
+              [appNgSrc]="item.logoUrl"
+              [alt]="item.name"
+            />
+          </div>
+        </div>
+      </div>
+    }
+  </section>
+</main>
+
+<!-- Chips Template -->
+<ng-template
+  #chips
+  let-content="content"
+  let-currentCompany="currentCompany"
+  let-item="item"
+>
+  <span
+    class="text-xs text-white bg-white bg-opacity-10 px-2 py-1 rounded-md shadow-sm"
+  >
+    {{
+      !currentCompany ? content : "Currently Working since " + item.startYear
+    }}
+  </span>
+</ng-template>

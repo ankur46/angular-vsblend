@@ -1,0 +1,20 @@
+<main
+  class="flex flex-grow h-full bg-gradient-to-r from-blue-200 to-sky-100 px-4 border-b-2 border-blue-200"
+>
+  <section class="flex items-center gap-1 flex-grow w-full justify-center">
+    <div class="flex items-center gap-1">
+      <mat-icon [svgIcon]="'arrowleft'" />
+      <mat-icon [svgIcon]="'arrowright'" />
+    </div>
+    <input
+      type="text"
+      class="w-[25em] px-4 text-sm bg-gray-50 border-2 border-gray-300 rounded-md"
+      placeholder="Angular VSBlend"
+    />
+  </section>
+  <section class="flex items-center gap-1">
+    @for (item of layoutIcons; track trackByItem) {
+      <mat-icon class="custom-size" [svgIcon]="item" />
+    }
+  </section>
+</main>

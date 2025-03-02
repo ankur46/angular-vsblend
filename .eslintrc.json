@@ -12,7 +12,7 @@
     {
       "files": ["*.ts"],
       "parserOptions": {
-        "project": ["tsconfig.(app|spec).json"]
+        "project": ["tsconfig.app.json", "tsconfig.spec.json"]
       },
       "extends": [
         "eslint:recommended",
@@ -37,17 +37,15 @@
           { "template": 30, "styles": 15 }
         ],
         "@angular-eslint/prefer-on-push-component-change-detection": "off",
-        "@typescript-eslint/no-extraneous-class": "off"
+        "@typescript-eslint/no-extraneous-class": "off",
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"]
       }
     },
     {
       "files": ["*.html"],
       "extends": ["plugin:@angular-eslint/template/all", "prettier"],
       "rules": {
-        "@angular-eslint/template/i18n": [
-          "error",
-          { "ignoreAttributes": ["content", "rel"], "checkId": false }
-        ]
+        "@angular-eslint/template/i18n": "off"
       }
     },
     {
@@ -65,7 +63,7 @@
       "plugins": ["jasmine"],
       "env": { "jasmine": true },
       "extends": ["plugin:jasmine/recommended", "prettier"],
-      "rules": {}
+      "rules": { "@typescript-eslint/no-unsafe-call": "off" }
     }
   ]
 }

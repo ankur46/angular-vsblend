@@ -1,0 +1,81 @@
+<main class="flex flex-col p-12 gap-12">
+  <div
+    class="flex flex-col gap-2 p-4 bg-gradient-to-r from-blue-200 to-sky-100 shadow-lg rounded-lg text-gray-800 w-full"
+  >
+    <span class="text-sm text-gray-500 tracking-wide">
+      {{ "@AngularVsBlend" }}
+    </span>
+
+    <h1 class="text-3xl font-light flex items-center gap-2">
+      <span class="font-semibold text-sky-600">Projects</span>
+      <span class="text-gray-500">extends</span>
+      <span class="bg-sky-500 text-white px-3 py-1 rounded-md shadow-md">
+        customCard
+      </span>
+    </h1>
+  </div>
+
+  <section class="grid grid-cols-1 gap-4 w-auto">
+    @for (item of projects; let index = $index; track trackByItem) {
+      <div
+        class="flex flex-col gap-2 p-4 bg-gradient-to-r from-blue-400 to-sky-500 shadow-lg rounded-lg w-full"
+      >
+        <!-- Top Section -->
+        <div class="flex justify-between items-start">
+          <div class="flex flex-col gap-2 w-1/2">
+            <h2 class="text-xl font-semibold text-white drop-shadow-md">
+              {{ item.name }}
+            </h2>
+            <p class="text-sm text-white/80">{{ item.description }}</p>
+            <div class="flex flex-wrap gap-2">
+              @for (child of item.techUsed; track trackByItem) {
+                <span
+                  class="text-xs text-white/80 bg-white bg-opacity-10 px-2 py-1 rounded-md"
+                >
+                  {{ child }}
+                </span>
+              }
+            </div>
+          </div>
+
+          <div
+            class="flex items-center overflow-hidden rounded-lg bg-white p-2 shadow-md"
+          >
+            <img
+              class="max-w-[20em] w-full h-auto object-cover rounded-md transition-transform duration-1000"
+              [ngClass]="{ 'w-[30em]': expandState[index] }"
+              [appNgSrc]="item.imageUrl"
+              [alt]="item.name"
+            />
+          </div>
+        </div>
+
+        <!-- Expandable Section -->
+        @if (expandState[index]) {
+          <span class="text-lg font-semibold text-white drop-shadow-md">
+            Key Features
+          </span>
+          @for (feat of item.keyFeatures; track trackByItem) {
+            <div class="mt-2 py-1 px-3 bg-white bg-opacity-20 rounded-lg">
+              <li class="text-white/80 text-sm px-2 py-1">{{ feat }}</li>
+            </div>
+          }
+        }
+        <!-- Expand Icon using mat-button -->
+        <button
+          type="button"
+          mat-button
+          class="p-2 rounded-full bg-white bg-opacity-20 hover:bg-opacity-30 transition-all duration-300 shadow-md"
+          (click)="expandState[index] = !expandState[index]"
+        >
+          <mat-icon
+            class="text-white transition-transform duration-300"
+            [ngClass]="{ 'rotate-180': expandState[index] }"
+          >
+            keyboard_arrow_down
+          </mat-icon>
+        </button>
+      </div>
+    }
+  </section>
+</main>

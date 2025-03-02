@@ -1,0 +1,49 @@
+<!-- eslint-disable @angular-eslint/template/no-call-expression -->
+<mat-tab-group
+  class="flex flex-grow h-full"
+  MatTabBodyPositionState="center"
+  animationDuration="0ms"
+  [selectedIndex]="navigationService.getVisibleElementIndex$"
+>
+  @for (navElement of navigationService.getActive$; track trackByItem) {
+    <mat-tab active>
+      <ng-template mat-tab-label>
+        <ng-container
+          *ngTemplateOutlet="
+            headerTitle;
+            context: {
+              navElement,
+              totalElements: navigationService.getActive$.length
+            }
+          "
+        />
+      </ng-template>
+      <div class="h-[calc(100vh-18rem)]">
+        <ng-container
+          context="ProfileComponents"
+          [appDynamicComponent]="navElement.componentName"
+        />
+      </div>
+    </mat-tab>
+  }
+</mat-tab-group>
+
+<!-- To render tab header title we have added this template to reuse in different tabs. -->
+<ng-template
+  #headerTitle
+  let-navElement="navElement"
+  let-totalElements="totalElements"
+>
+  <div class="!group flex flex-row items-center justify-center">
+    <img alt="no-image" class="h-5 mr-2" [appNgSrc]="navElement.iconUrl" />
+    <span>{{ navElement.name }}</span>
+    @if (totalElements > 1) {
+      <mat-icon
+        class="!group-hover:block ml-1 text-lg mb-1"
+        (click)="navigationService.toggleInView(navElement, false)"
+      >
+        close
+      </mat-icon>
+    }
+  </div>
+</ng-template>
