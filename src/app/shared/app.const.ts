@@ -303,16 +303,34 @@ export const FILETREE: FileTree[] = [
 ];
 
 export const CONTACTSANDLINKS: ContactLinks[] = [
-  { name: 'Github', url: 'https://github.com/ankur46' },
-  { name: 'Linkdin', url: 'https://www.linkedin.com/in/ankur-deshwal/' },
+  {
+    name: 'Github',
+    iconUrl: 'assets/vscode-icons/githubLogo.svg',
+    url: 'https://github.com/ankur46',
+  },
+  {
+    name: 'Linkdin',
+    iconUrl: 'assets/vscode-icons/linkedin.svg',
+    url: 'https://www.linkedin.com/in/ankur-deshwal/',
+  },
   {
     name: 'Portfolio Doc',
+    iconUrl: 'assets/vscode-icons/portfolio.svg',
     url: 'https://melodic-arthropod-f22.notion.site/Angular-VSBlend-fea1657f26ca49b085e1df62660ebcda',
   },
-  { name: 'Phone No ', url: '+91 7696-05-6272' },
-  { name: 'Email Id', url: 'deshwal.ankur18@gmail.com' },
+  {
+    name: 'Phone No ',
+    iconUrl: 'assets/vscode-icons/phone.svg',
+    url: '+91 7696-05-6272',
+  },
+  {
+    name: 'Email Id',
+    iconUrl: 'assets/vscode-icons/mail.svg',
+    url: 'deshwal.ankur18@gmail.com',
+  },
   {
     name: 'Upwork Id',
+    iconUrl: 'assets/vscode-icons/upwork.svg',
     url: 'https://www.upwork.com/freelancers/~01b3adaa988b028ff3',
   },
 ];
