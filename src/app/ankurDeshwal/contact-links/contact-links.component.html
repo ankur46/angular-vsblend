@@ -4,7 +4,7 @@
   >
     <span class="text-white" [innerHTML]="'{'"></span>
     @for(item of contactLinks;track trackByItem){
-      <span class="text-black drop-shadow-md">{{item.name}}</span>: <a target="_blank" class="text-white/80 font-medium hover:font-semibold drop-shadow-sm" [href]="item.url"  >"{{item.url}}"</a>,
+      <img class="object-cover size-8 inline bg-white/80 rounded-lg border-2 " alt="github logo" [appNgSrc]="item.iconUrl"/> : <a target="_blank" class="text-white/80 font-medium hover:font-semibold drop-shadow-sm" [href]="item.url"  >"{{item.url}}"</a>,
     }
     <span></span>
     <span class="text-white" [innerHTML]="'}'"></span>

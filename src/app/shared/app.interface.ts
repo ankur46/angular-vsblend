@@ -49,6 +49,7 @@ export type EmploymentInfo = {
 
 export type ContactLinks = {
   name: string;
+  iconUrl: string;
   url: string;
 };
 
