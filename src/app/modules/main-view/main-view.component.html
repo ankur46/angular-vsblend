@@ -13,7 +13,7 @@
             headerTitle;
             context: {
               navElement,
-              totalElements: navigationService.getActive$.length
+              totalElements: navigationService.getActive$.length,
             }
           "
         />
@@ -34,7 +34,11 @@
   let-navElement="navElement"
   let-totalElements="totalElements"
 >
-  <div class="!group flex flex-row items-center justify-center">
+  <button
+    type="button"
+    class="!group flex flex-row items-center justify-center"
+    (click)="navigationService.toggleInView(navElement, false, true)"
+  >
     <img alt="no-image" class="h-5 mr-2" [appNgSrc]="navElement.iconUrl" />
     <span>{{ navElement.name }}</span>
     @if (totalElements > 1) {
@@ -45,5 +49,5 @@
         close
       </mat-icon>
     }
-  </div>
+  </button>
 </ng-template>
