@@ -11,8 +11,10 @@ export class NavigationService {
   );
   protected activeElements: WritableSignal<NavigationElement[]> = signal([]);
   protected visibleElementIndex: WritableSignal<number> = signal(0);
+  protected visibleElementId: WritableSignal<number> = signal(0);
 
   private set setVisibilityIndex(id: number) {
+    this.visibleElementId.set(id);
     const index = this.getActive$.findIndex((ele) => ele.id === id);
     this.visibleElementIndex.set(
       index !== -1 ? index : this.getActive$.length - 1,
@@ -37,7 +39,6 @@ export class NavigationService {
       index !== -1 && currentElements.splice(index, 1);
     }
     this.activeElements.set(currentElements.map((el: NavigationElement) => el));
-    this.setVisibilityIndex = element.id;
   }
 
   get getAll$(): NavigationElement[] {
@@ -52,7 +53,16 @@ export class NavigationService {
     return this.visibleElementIndex();
   }
 
-  public toggleInView(element: NavigationElement, inView: boolean): void {
-    this.update(element, inView);
+  get getVisibleElementId$(): number {
+    return this.visibleElementId();
+  }
+
+  public toggleInView(
+    element: NavigationElement,
+    inView: boolean,
+    setOnlyIndex = false,
+  ): void {
+    !setOnlyIndex && this.update(element, inView);
+    this.setVisibilityIndex = element.id;
   }
 }

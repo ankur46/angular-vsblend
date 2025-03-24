@@ -19,10 +19,10 @@ export class FileComponent extends TrackClass implements OnInit {
 
   ngOnInit(): void {
     if (this.navigationService.getAll$[0]) {
-      this.navigationService.toggleInView(
-        this.navigationService.getAll$[0],
-        true,
-      );
+      [1, 0].forEach((index: number) => {
+        const element = this.navigationService.getAll$[index];
+        element && this.navigationService.toggleInView(element, true);
+      });
     }
   }
 }
