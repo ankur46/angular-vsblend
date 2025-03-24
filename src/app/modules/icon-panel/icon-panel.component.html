@@ -3,10 +3,12 @@
     @for (item of svgIcons | slice: 0 : 5; track trackByItem) {
       <button
         type="button"
-        class="flex items-center justify-center py-3 hover:bg-blue-300 cursor-pointer"
+        class="flex items-center justify-center py-3 hover:bg-blue-300 cursor-pointer transition-all duration-300 ease-in-out transform"
         [ngClass]="{
-          'border-l-2 border-sky-600':
-            iconpanelService.getSelectedIcon$.panelIcon === item
+          'border-l-4 bg-sky-200 border-sky-600 scale-105 opacity-100':
+            iconpanelService.getSelectedIcon$.panelIcon === item,
+          'scale-100 opacity-80':
+            iconpanelService.getSelectedIcon$.panelIcon !== item,
         }"
         (click)="iconpanelService.onIconSelected(item)"
       >
