@@ -328,11 +328,11 @@ export const CONTACTSANDLINKS: ContactLinks[] = [
     iconUrl: 'assets/vscode-icons/mail.svg',
     url: 'deshwal.ankur18@gmail.com',
   },
-  {
-    name: 'Upwork Id',
-    iconUrl: 'assets/vscode-icons/upwork.svg',
-    url: 'https://www.upwork.com/freelancers/~01b3adaa988b028ff3',
-  },
+  // {
+  //   name: 'Upwork Id',
+  //   iconUrl: 'assets/vscode-icons/upwork.svg',
+  //   url: 'https://www.upwork.com/freelancers/~01b3adaa988b028ff3',
+  // },
 ];
 
 export const ACCOMPLISHMENT: Accomplishment[] = [
@@ -378,12 +378,12 @@ export const ACCOMPLISHMENT: Accomplishment[] = [
       'This certification tested my knowledge of Google Cloud Platform and terminology used in it',
     imageUrl: 'assets/certificates/googleCloudCertification.png',
   },
-  {
-    name: 'Upwork Earnings',
-    description:
-      'I have earned more than 10k USD on Upwork and worked under different clients and projects',
-    imageUrl: 'assets/certificates/upWorkCertification.png',
-  },
+  // {
+  //   name: 'Upwork Earnings',
+  //   description:
+  //     'I have earned more than 10k USD on Upwork and worked under different clients and projects',
+  //   imageUrl: 'assets/certificates/upWorkCertification.png',
+  // },
 ];
 
 export const PERSONALDETAILDISPLAYFIELDS: PersonalDetailDisplayFields[] = [

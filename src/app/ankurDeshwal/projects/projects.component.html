@@ -39,14 +39,19 @@
           </div>
 
           <div
-            class="flex items-center overflow-hidden rounded-lg bg-white p-2 shadow-md"
+            class="flex items-center relative rounded-lg bg-white p-2 shadow-md group flex-col cursor-pointer"
           >
             <img
-              class="max-w-[20em] w-full h-auto object-cover rounded-md transition-transform duration-1000"
+              class="max-w-[20em] w-full h-auto object-cover rounded-md transition-transform duration-700 ease-in-out group-hover:scale-[1.7] group-hover:-translate-x-20"
               [ngClass]="{ 'w-[30em]': expandState[index] }"
               [appNgSrc]="item.imageUrl"
               [alt]="item.name"
             />
+            <span
+              class="mt-2 text-xs text-sky-600 opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              Hover to zoom image
+            </span>
           </div>
         </div>
 
