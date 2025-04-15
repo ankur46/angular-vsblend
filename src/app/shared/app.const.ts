@@ -373,10 +373,22 @@ export const ACCOMPLISHMENT: Accomplishment[] = [
     imageUrl: 'assets/certificates/pnrCertification.jpg',
   },
   {
+    name: 'Bravo Award for Auth0 Integration',
+    description:
+      'Successfully integrated auth0 in workbench and deployed on non-prod GCP, Critical step in cloud migration',
+    imageUrl: 'assets/certificates/auth0_integration_certificate.jpg',
+  },
+  {
     name: 'Google Cloud Digital Leader Certification',
     description:
       'This certification tested my knowledge of Google Cloud Platform and terminology used in it',
     imageUrl: 'assets/certificates/googleCloudCertification.png',
+  },
+  {
+    name: 'Angular Team Lead Certification',
+    description:
+      'This certification tested my knowledge of Angular with very deep level concepts and also knowledge of frontend architecture',
+    imageUrl: 'assets/certificates/Angular_teamLead_Certificate.png',
   },
   // {
   //   name: 'Upwork Earnings',
