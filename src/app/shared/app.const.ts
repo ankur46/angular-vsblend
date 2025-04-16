@@ -376,7 +376,7 @@ export const ACCOMPLISHMENT: Accomplishment[] = [
     name: 'Bravo Award for Auth0 Integration',
     description:
       'Successfully integrated auth0 in workbench and deployed on non-prod GCP, Critical step in cloud migration',
-    imageUrl: 'assets/certificates/auth0_integration_certificate.jpg',
+    imageUrl: 'assets/certificates/auth0_integration_certificate.png',
   },
   {
     name: 'Google Cloud Digital Leader Certification',
